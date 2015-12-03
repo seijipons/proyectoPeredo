@@ -46,24 +46,26 @@ public class Alta extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        String nombre = request.getParameter("nom");
-        String paterno = request.getParameter("paterno");
-        String materno = request.getParameter("materno");
-        String usuario = request.getParameter("usu");
-        String password = request.getParameter("pas");
-        String estatus = request.getParameter("est");
+        String nombre = request.getParameter("nombre");
+        String paterno = request.getParameter("ape_p");
+        String materno = request.getParameter("ape_m");
+        String usuario = request.getParameter("usuario");
+        String password = request.getParameter("contra");
+        String direccion = request.getParameter("direccion");
+        String fecnac = request.getParameter("fecha");
         
         try
         {
          
-            String strSQL = "INSERT INTO usuarios ( nombre, apellido_paterno, apellido_materno, username, password, status ) " +
+            String strSQL = "INSERT INTO usuario ( nombre_usuario, ape_paterno, ape_materno, user, password, fecha_nac, direccion, id_tusuario) " +
                     " VALUES( "
                     + "'" + nombre + "', '" 
                     + paterno + "', '" 
                     + materno + "', '" 
                     + usuario + "', '"
-                    + password + "', " 
-                    + estatus + ")";
+                    + password + "', '" 
+                    + fecnac+ "', '" 
+                    + direccion + "', 2)";
                System.out.println(strSQL);
 
             consulta.executeUpdate(strSQL); 
