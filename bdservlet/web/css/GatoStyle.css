@@ -1,0 +1,11 @@
+td{
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+}
+td.x{
+    background: url("/materialize/Multimedia/x.png") no-repeat;
+}
+td.o{
+    background: url("/materialize/Multimedia/o.png") no-repeat;
+}
