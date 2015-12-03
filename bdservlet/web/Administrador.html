@@ -1,0 +1,49 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mysql</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <div>
+            Bienvenido Administrador            
+            <center>          
+                
+                <form action="Alta" method="post">
+
+                    <h1 align="center">Nombre</h1>
+                    <input type="text" align="center" maxlength="10" size="10" name="nom" placeholder="Nombre" required />
+
+                    <h1 align="center">Apellido Paterno</h1>
+                    <input type="text" align="center" maxlength="10" size="10" name="paterno" placeholder="A.Paterno" required/>
+
+                    <h1 align="center">Apellido Materno</h1>
+                    <input type="text" align="center" maxlength="10" size="10" name="materno" placeholder="A.Materno" required/>
+
+                    <h1 align="center">Usuario</h1>
+                    <input type="text" align="center" maxlength="10" size="10" name="usu" placeholder="Usuario" required/>
+
+                    <h1 align="center">Password</h1>
+                    <input type="password" align="center" maxlength="10" size="10" name="pas" placeholder="Password" required/>
+
+                    <h1 align="center">Estatus</h1>
+                    
+                    <select name="est">
+                             <option value="1">Administrador</option>
+                             <option value="2">Profesor</option>
+                             <option value="3">Alumno</option>
+
+                     </select>
+
+                    <hr>
+                    <input type="submit" value="Alta"/>
+                    <input type="reset" value="Limpiar"/>
+                </form>
+            </center>            
+        </div>
+    </body>
+</html>
