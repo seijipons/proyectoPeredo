@@ -16,7 +16,8 @@
             });
              $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
-    selectYears: 30 // Creates a dropdown of 15 years to control year
+    selectYears: 30, // Creates a dropdown of 15 years to control year
+    format: 'yyyy-mm-dd'
   });
         });
         
@@ -42,26 +43,44 @@
       <div id="login">
        <!-- esta parte es la de login donde sale el cuadro de texto      -->
                <h4>Registro de usuario nuevo</h4>
-              <form action="#" method="post">
+              <form action="Alta" method="post">
                 <p><div class="row">
        <div class="input-field col s4">
-          <input id="Nombre" type="text" class="validate">
+          <input id="Nombre" name="nombre" type="text" class="validate">
           <label for="Nombre">Nombre(s)</label>
         </div>  
        <div class="input-field col s4">
-          <input id="Apellido" type="text" class="validate">
-          <label for="Apellidos">Apellidos</label>
+          <input id="ape_p" name="ape_p" type="text" class="validate">
+          <label for="ape_p">Apellido Paterno</label>
+        </div>
+        <div class="input-field col s4">
+          <input id="ape_m" name="ape_m" type="text" class="validate">
+          <label for="ape_m">Apellido Materno</label>
         </div>
         </div>
         <div class="row">
          <div class="input-field col s6">
-           <input type="date" class="datepicker" name="" placeholder="Fecha de nacimiento"/>
+           <input type="date" class="datepicker" name="fecha" placeholder="Fecha de nacimiento"/>
             </div>
+             <div class="input-field col s4">
+          <input id="direccion" name="direccion" type="text" class="validate">
+          <label for="direccion">Dirección</label>
+        </div>
                   </div>
-       <br>
+                <div class="row">
+         
+       <div class="input-field col s4">
+          <input id="username" name="usuario" type="text" class="validate">
+          <label for="username">Nombre de usuario</label>
+        </div>
+       <div class="input-field col s4">
+          <input id="password" name="contra" type="password" class="validate">
+          <label for="password">Contraseña</label>
+        </div>
+       </div>
         <br>
       
-       <a class="waves-effect waves-light btn" href="#">Entrar</a>
+       <div class="modal-footer"><button type="submit" class="waves-effect waves-light btn" value="Submit">Registrar</button></div>
         </form>
         </div>
      </div>
