@@ -9,7 +9,7 @@
         </init-param>
         <init-param>
             <param-name>Bd</param-name>
-            <param-value>jdbc:mysql://localhost/prueba</param-value>
+            <param-value>jdbc:mysql://localhost:3306/consultorio</param-value>
         </init-param>
         <init-param>
             <param-name>Usuario</param-name>
@@ -29,7 +29,7 @@
         </init-param>
         <init-param>
             <param-name>Bd</param-name>
-            <param-value>jdbc:mysql://localhost:3306/prueba</param-value>
+            <param-value>jdbc:mysql://localhost:3306/consultorio</param-value>
         </init-param>
         <init-param>
             <param-name>Usuario</param-name>

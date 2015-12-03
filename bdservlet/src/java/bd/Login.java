@@ -51,12 +51,12 @@ public class Login extends HttpServlet
 
         try
         {
-            String strSql = "SELECT * FROM usuarios WHERE contraseña = '"+password+"' and usuario = '"+usuario+"'";            
+            String strSql = "SELECT * FROM usuario WHERE password = '"+password+"' and user = '"+usuario+"'";            
             resultado = consulta.executeQuery(strSql);
             
             if(resultado.next())
             {
-                int status = resultado.getInt("estatus");
+                int status = resultado.getInt("id_tusuario");
                 
                 if(status ==1)
                 {
