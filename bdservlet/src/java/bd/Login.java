@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 
 /**
  *
@@ -43,11 +44,14 @@ public class Login extends HttpServlet
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        //response.setContentType("text/html;charset=UTF-8");
-        //PrintWriter out = response.getWriter();
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
         
         String usuario = request.getParameter("usu");
         String password = request.getParameter("pas");
+        
+        
+   
 
         try
         {
@@ -60,7 +64,10 @@ public class Login extends HttpServlet
                 
                 if(status ==1)
                 {
-                    response.sendRedirect("/bdservlet/Administrador.html");
+                 
+                    
+                    response.sendRedirect("/bdservlet/consultorio.jsp?id="+resultado.getString("id_usuario"));
+                    
                 }
                 else if(status == 2)
                 {
