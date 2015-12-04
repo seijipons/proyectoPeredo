@@ -1,9 +1,12 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="bd.Conexion"%>
-
+<%@page import="bd.Login"%>
 <%@page contentType="text/html" %>
 <%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*,java.lang.*" %>
+<%
+    Conexion ob=new Conexion();
+    %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,10 +39,10 @@
     <div class="navbar-fixed">
      <nav class="#00897b teal darken-1">
         <div class="nav-wrapper">
-            <a href="Inicio.html" class="brand-logo center"><marquee direction="left">Farmacia del Dr Goku - lo mismo pero mas poderoso</marquee></a>
+            <a href="index.jsp" class="brand-logo center"><marquee direction="left">Farmacia del Dr Goku - lo mismo pero mas poderoso</marquee></a>
   <!--   menu de informacion donde te puedes     -->
   <ul id="slide-out" class="side-nav">
-    <li><a class="waves-effect waves-light" href="Index.html">Inicio</a></li>
+    <li><a class="waves-effect waves-light" href="index.jsp">Inicio</a></li>
     <li><a class="waves-effect waves-light" href="#!">Medicina freemium</a></li>
     <li><a class="waves-effect waves-light" href="#!">Creditos</a></li>
   </ul>
@@ -50,12 +53,21 @@
     <div id="cuerpo">
       <div id="login">
        <!-- esta parte es la de login donde sale el cuadro de texto      -->
-        <h3>Bienvenido: Nombre del fulano</h3>
+       <h3>Bienvenido:
+            <%
+            String id=request.getParameter( "id" );
+            String tomarNombre="SELECT * FROM `usuario` WHERE `id_usuario`="+id;
+            ResultSet res=ob.query(tomarNombre);
+            while(res.next()){
+      
+        out.println(res.getString(2));      
+        }
+            %>
+        </h3>
                <h4>Indentifique su enfermedad</h4>
           <!--h1>Prueba de impresion qd</h1-->
-               <form action="#" method="post">
-                <p>
-                   <form action="#" method="post">
+               <form action="medicamentos." method="get">
+                
                     <div class="input-field col s12">
     <select>
       <option value="" disabled selected>Haga clic aqui</option>
@@ -64,7 +76,7 @@
     <%
         
       String name = request.getParameter( "firstName" );
-      Conexion ob=new Conexion();
+      
       ResultSet ej=ob.listaEnfermedades();
       
         while(ej.next()){
