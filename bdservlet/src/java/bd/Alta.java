@@ -76,6 +76,7 @@ public class Alta extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Alta de usuario en la Base de Datos</h1>");
+            out.println("<a href=\"index.jsp\">Inixio</a>");
             out.println("</body>");
             out.println("</html>");
 
