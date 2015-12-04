@@ -71,7 +71,7 @@ public class Login extends HttpServlet
                 }
                 else if(status == 2)
                 {
-                    response.sendRedirect("/bdservlet/Profesor.html");
+                    response.sendRedirect("/bdservlet/consultorio.jsp?id="+resultado.getString("id_usuario"));
                 }
                 else if(status == 3)
                 {
