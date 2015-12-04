@@ -118,7 +118,6 @@ public class Conexion {
             datosConsulta=resultadoEnfermedades.getMetaData();
             String[] filasConsulta=new String[datosConsulta.getColumnCount()];
           
-          
             int a,num;
                        
            /* 
@@ -140,6 +139,39 @@ public class Conexion {
             return null;
         }
     } 
+     public ResultSet query(String query){
+        try{
+            Conexion c=new Conexion();
+            ResultSet resultadoEnfermedades;
+            ResultSetMetaData datosConsulta;
+            String consulta=query;
+            Statement sentencia=c.conexion.createStatement();
+            resultadoEnfermedades=sentencia.executeQuery(consulta);
+            
+            datosConsulta=resultadoEnfermedades.getMetaData();
+            //String[] filasConsulta=new String[datosConsulta.getColumnCount()];
+          
+           //int a,num;
+                       
+           /* 
+            while(resultadoProductos.next()){
+              
+                filasConsulta[0]=resultadoProductos.getString(1);
+                filasConsulta[1]=resultadoProductos.getString(2);
+                
+                 
+            }//end while
+            */
+            
+            return resultadoEnfermedades;
+            
+        }catch(Exception ex){
+            System.out.println("No consulta usuarios: "+ ex.getMessage());
+            ex.printStackTrace();
+            
+            return null;
+        }
+    }
 }
 
     
